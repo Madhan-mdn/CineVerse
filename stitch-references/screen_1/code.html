@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CineVerse - Interstellar</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Outfit, Inter, Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with form & container query plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#694900",
+            "surface-container": "#1c1f2a",
+            "primary": "#dbfcff",
+            "on-secondary-fixed": "#271900",
+            "on-secondary-fixed-variant": "#5e4100",
+            "primary-fixed-dim": "#00dbe9",
+            "surface-variant": "#313540",
+            "on-error": "#690005",
+            "outline": "#849495",
+            "on-primary-container": "#006970",
+            "secondary-fixed": "#ffdea9",
+            "surface-tint": "#00dbe9",
+            "background": "#0f131d",
+            "inverse-primary": "#006970",
+            "on-primary": "#00363a",
+            "on-tertiary-fixed": "#40000f",
+            "on-surface-variant": "#b9cacb",
+            "surface-bright": "#353944",
+            "on-error-container": "#ffdad6",
+            "surface-container-highest": "#313540",
+            "inverse-surface": "#dfe2f1",
+            "outline-variant": "#3b494b",
+            "on-primary-fixed-variant": "#004f54",
+            "on-background": "#dfe2f1",
+            "primary-container": "#00f0ff",
+            "secondary": "#ffd795",
+            "error": "#ffb4ab",
+            "on-tertiary-container": "#be003f",
+            "inverse-on-surface": "#2c303b",
+            "on-tertiary-fixed-variant": "#91002e",
+            "on-surface": "#dfe2f1",
+            "surface-container-high": "#262a35",
+            "on-tertiary": "#67001e",
+            "surface": "#0f131d",
+            "tertiary-fixed": "#ffdadc",
+            "secondary-fixed-dim": "#ffba27",
+            "error-container": "#93000a",
+            "secondary-container": "#fbb400",
+            "surface-dim": "#0f131d",
+            "tertiary": "#fff3f3",
+            "tertiary-container": "#ffcdd0",
+            "surface-container-low": "#171b26",
+            "tertiary-fixed-dim": "#ffb2b9",
+            "on-secondary": "#422c00",
+            "surface-container-lowest": "#0a0e18",
+            "primary-fixed": "#7df4ff",
+            "on-primary-fixed": "#002022"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Outfit"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Outfit"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "display-hero": ["Outfit"],
+            "body-md": ["Inter"],
+            "label-md": ["Space Grotesk"],
+            "label-sm": ["Space Grotesk"],
+            "display-hero-mobile": ["Outfit"],
+            "label-lg": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.03em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-fixed min-h-screen flex justify-center">
+<!-- Mobile Screen Container Max Width with Responsive Scaling -->
+<div class="w-full max-w-md bg-surface-container-lowest min-h-screen relative pb-28 shadow-2xl overflow-x-hidden">
+<!-- Top Floating Header Bar (Overlaying Banner) -->
+<header class="fixed top-0 max-w-md w-full z-50 px-margin-mobile py-space-sm flex items-center justify-between pointer-events-none transition-all duration-300">
+<button aria-label="Go Back" class="pointer-events-auto w-10 h-10 rounded-full bg-surface-container-lowest/70 backdrop-blur-md border border-outline-variant/30 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-all shadow-sm" onclick="window.history.back()">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-space-xs pointer-events-auto">
+<button aria-label="Share Movie" class="w-10 h-10 rounded-full bg-surface-container-lowest/70 backdrop-blur-md border border-outline-variant/30 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button aria-label="Save to Favorites" class="w-10 h-10 rounded-full bg-surface-container-lowest/70 backdrop-blur-md border border-outline-variant/30 flex items-center justify-center text-on-surface hover:text-error active:scale-95 transition-all shadow-sm" id="headerFavBtn" onclick="toggleHeaderFav()">
+<span class="material-symbols-outlined" data-icon="favorite" id="headerFavIcon">favorite</span>
+</button>
+</div>
+</header>
+<!-- Immersive Banner Backdrop -->
+<div class="relative w-full h-[320px] overflow-hidden select-none">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sprawling, high-contrast cinematic wide shot of an astronomical spacecraft orbiting a colossal, iridescent glowing black hole amidst swirling accretion discs and cosmic dust. Deep atmospheric obsidian shadows contrasted with piercing cyan and solar amber rim lighting create a hyper-detailed sci-fi vista. Atmospheric depth and photorealistic starfields evoke awe and danger in a premium cinema dark tone." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1q_jzviTbyZzBzeiax_J4Xt3C8Lz-7HgNnhEZjkfLZAhsKjyp7HsK76TcmvVI08oYYMWYX24G9gzBt0-A01X-FilsYfdJI2K8eD2suHestWUAGJkNOiv9jO9cmnB0xpGUrKnCy6FKoBr3ntEf7DwTIyTllA72YYUU2Z_LScBqQGTlS_JT2U1AuMIPEaLiknTVJbd-IAvEjO3eSADXGRizEJ9GF1d1X5KKUps3-iCfrAEdjizR5_ZW')">
+</div>
+<!-- Vignette and Gradient Overlay for seamless blend into content canvas -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/60 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/50 via-transparent to-surface-container-lowest/40"></div>
+</div>
+<!-- Movie Hero Header with Overlapping Poster -->
+<div class="px-margin-mobile -mt-24 relative z-10">
+<div class="flex gap-space-md items-end">
+<!-- Poster Card (Aspect 2:3) with Luminous Edge -->
+<div class="w-28 sm:w-32 aspect-[2/3] rounded-lg overflow-hidden shrink-0 shadow-2xl border border-outline-variant/40 relative group">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A theatrical cinematic portrait poster showing an astronaut standing on the surface of an alien water world under massive gravitational waves and twin alien moons. Stylized cinematic photography with cool teal atmosphere, obsidian slate tones, and a reflective helmet visor reflecting deep stellar voids. Highly detailed movie promotional art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdZMyEl87CivYAxh6vVOwx68oUS8CQtvje0e4zpyKluELs8OAOHNFwYQKGGT_i26hdp4u4ReZxXqN7CJkUGDkaS8hLI-8X5faC2H8XZ1DsC98vIHVqB9aNAki6hxgJPDvoBfxXWKbqMfyCD_PArzSowC4H6EMuFXOpnCQbeu4mgmKbORwc7EmX7ay5LiOAp6sDrCRl8rYChV7WXvp3UM6901eB9ajgWu6x9A9tSWOMTroJDBy7HLaF"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-lg pointer-events-none"></div>
+</div>
+<!-- Meta cluster beside poster -->
+<div class="flex-1 pb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/15 text-primary border border-primary-container/30 text-label-sm font-label-sm uppercase mb-1.5">
+<span class="material-symbols-outlined text-[13px] text-primary" data-icon="movie">movie</span>
+            Sci-Fi Epic
+          </span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight leading-tight">Interstellar</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mt-0.5">"Beyond the stars lies humanity's destiny"</p>
+</div>
+</div>
+<!-- Quick Specs Badges Strip -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-md text-label-sm font-label-sm text-on-surface-variant">
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">2024 Re-Release</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">PG-13</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">2h 46m</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/10 border border-primary-container/40 text-primary font-bold">ULTRA HD 4K</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">IMAX DMR</span>
+</div>
+</div>
+<!-- Rating & Stats Bento Row -->
+<div class="px-margin-mobile mt-space-md">
+<div class="grid grid-cols-3 gap-2 bg-surface-container/70 backdrop-blur-md rounded-xl p-space-sm border border-outline-variant/30 shadow-sm">
+<!-- Critic Metascore -->
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-high/40 text-center">
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary-container"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">86</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/100</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Metascore</span>
+</div>
+<!-- Audience IMDb Rating -->
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-high/40 text-center border-x border-outline-variant/20">
+<div class="flex items-center gap-1 text-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">8.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/10</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">1.8M Votes</span>
+</div>
+<!-- CineVerse Match -->
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-high/40 text-center">
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-headline-sm text-headline-sm text-primary">94%</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Match Score</span>
+</div>
+</div>
+</div>
+<!-- Primary Action Bar -->
+<div class="px-margin-mobile mt-space-md flex flex-col gap-space-xs">
+<div class="grid grid-cols-2 gap-2">
+<!-- Watchlist Primary CTA -->
+<button class="h-11 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] active:scale-95 transition-all" id="watchlistBtn" onclick="toggleWatchlist()">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark" id="watchlistIcon">bookmark</span>
+<span id="watchlistText">Add to Watchlist</span>
+</button>
+<!-- Play Trailer CTA -->
+<button class="h-11 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-variant active:scale-95 transition-all" onclick="scrollToTrailer()">
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="play_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span>Play Trailer</span>
+</button>
+</div>
+<!-- Secondary Action: Mark as Watched -->
+<button class="w-full h-10 rounded-full bg-surface-container-low border border-outline-variant/20 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-2 active:scale-95 transition-all" id="watchedBtn" onclick="toggleWatched()">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle" id="watchedIcon">check_circle</span>
+<span id="watchedText">Mark as Watched</span>
+</button>
+</div>
+<!-- Synopsis / Overview Section -->
+<div class="px-margin-mobile mt-space-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1.5 flex items-center gap-2">
+<span>Storyline</span>
+</h2>
+<div class="relative">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-3 transition-all duration-300" id="synopsisText">
+          In a deteriorating Earth devastated by blight and catastrophic sandstorms, an ex-NASA pilot turned crop farmer, Cooper, is chosen for a secret interstellar odyssey. With humanity facing extinction, a crew of astronauts undertakes a perilous voyage through a mysterious wormhole near Saturn to explore three uncharted planets orbiting Gargantua, seeking a sanctuary among the stars before our species fades forever.
+        </p>
+<button class="mt-1 font-label-sm text-label-sm text-primary hover:text-primary-fixed flex items-center gap-0.5" id="readMoreBtn" onclick="toggleReadMore()">
+<span id="readMoreLabel">Read More</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="expand_more" id="readMoreIcon">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Director & Key Crew Badges -->
+<div class="px-margin-mobile mt-space-md">
+<div class="grid grid-cols-2 gap-2">
+<div class="p-3 rounded-lg bg-surface-container/60 border border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="movie_filter">movie_filter</span>
+</div>
+<div class="truncate">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Director</p>
+<p class="font-label-md text-label-md text-on-surface truncate">Christopher Nolan</p>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/60 border border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="music_note">music_note</span>
+</div>
+<div class="truncate">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Original Score</p>
+<p class="font-label-md text-label-md text-on-surface truncate">Hans Zimmer</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Billed Cast (Horizontal Carousel) -->
+<div class="mt-space-lg">
+<div class="px-margin-mobile flex justify-between items-baseline mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Top Billed Cast</h2>
+<span class="font-label-sm text-label-sm text-primary hover:underline cursor-pointer">All 28 Cast</span>
+</div>
+<div class="flex gap-3 overflow-x-auto px-margin-mobile no-scrollbar py-2">
+<!-- Cast Member 1 -->
+<div class="w-24 shrink-0 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-primary transition-all shadow-md mb-2">
+<img class="w-full h-full object-cover" data-alt="Close-up studio cinematic headshot portrait of actor Matthew McConaughey with intense gaze, bathed in soft chiaroscuro rim lighting against a deep slate navy background. High-fidelity cinematic editorial headshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbtoGePZtRfaF1tm688TJZSLU9c5Lp1IxBfy508I08wN_-YkZP6EffWU-KvW34z7PywNy82Y4y4BNdSfDTLeIOQBy_mXePhFEW5M7Kc04qLZgZRSxf5bmU3lN_egexWBVy5HAKFVPKFoXbVNvPaKfTfrRVs-d_JlmhQIYeobjnFl4zT0PBrKINwyqMzl6XjThTr4VEzsXRrlAKeBope2NOMlvfa7L_-nsPP9XlO_PoTx1vSROxMUuR"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface line-clamp-1">M. McConaughey</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Cooper</p>
+</div>
+<!-- Cast Member 2 -->
+<div class="w-24 shrink-0 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-primary transition-all shadow-md mb-2">
+<img class="w-full h-full object-cover" data-alt="Editorial studio portrait of actress Anne Hathaway looking thoughtfully at the lens, illuminated by soft cinematic diffuse lighting against an obsidian backdrop. Clean, high contrast film celebrity profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXbXJjYzcR1wSUvuRoyd1LlQJ2l5WEj5z3ZyL4ZV-QVj0eVwj3a3ZIZSA9Si1u_FisMtrHXIK106u9J3pTkq0uO0XO9zdjmeey8eCt3UNUonlNEymRHZx4vEpSl-wPJDIVaKxq6ACbOMXaw0kw3iOcgb3o7SgbGL8492iVk_2JLEI8wvUPHtKq86BgY9Q3VxwgKurwRNUWazzvwNszY5lF4aYdOZjZLxJsrcC2Op9eRii9hpwH0vJj"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface line-clamp-1">Anne Hathaway</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Brand</p>
+</div>
+<!-- Cast Member 3 -->
+<div class="w-24 shrink-0 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-primary transition-all shadow-md mb-2">
+<img class="w-full h-full object-cover" data-alt="Dramatic high-end studio portrait of actress Jessica Chastain with elegant red hair and expressive look, rimmed with deep cosmic cyan sidelight against a dark charcoal tone. Editorial quality profile photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsuxT4IP5zZHZQJkvuG2tHXV1BD38o8ca-SkSehILo7FjLSSMMTAM4AYu8SXx4KSM2Lq4_CGcQIWJJTDGftcCiW6r1noSYreGBFUbRnf4-jIdhpnhDmpK_ne-T_Vve2fWPrA0YwkwEq-b9L7s4-rJazKXKEeP_WjtTBXMNsfBkXk-GkiNw39SRZigftxWPIyk6XKNhU87rtRjATKeErDO0pFFWJ08hYiKmUuq98hg295Vl0m2qwub6"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface line-clamp-1">Jessica Chastain</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Murph</p>
+</div>
+<!-- Cast Member 4 -->
+<div class="w-24 shrink-0 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-primary transition-all shadow-md mb-2">
+<img class="w-full h-full object-cover" data-alt="Dignified cinematic portrait of veteran actor Michael Caine in classic wardrobe, subtle warm ambient lighting illuminating his face against a low-key theatrical dark atmosphere. Film editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYd7TxW5eSbRMiPdmk8SnzvU17JCsqW4TPIt3URVy10bYIPupIpTgLmKC9YtinKTBFJLjBKPGJxRji6OhPF4yfZAQDm74RfGkVsX2BK-jPcwBA2hxw7AdfAZpxi1jC3wAuhacPngrqxcNzLBIJ3kTPA1t9PXaSDRGhAzoKR2OsEahcC0PN9-tMyPRj-as6GQKjJ0KXpTLd1bVNlXVsDZpVa3rIlLvEd-WwW9w7SL_RDSLEikOr4ouK"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface line-clamp-1">Michael Caine</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Professor Brand</p>
+</div>
+<!-- Cast Member 5 -->
+<div class="w-24 shrink-0 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-primary transition-all shadow-md mb-2">
+<div class="w-full h-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[32px]" data-icon="smart_toy">smart_toy</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface line-clamp-1">Bill Irwin</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">TARS (Voice)</p>
+</div>
+</div>
+</div>
+<!-- Official Trailer Video Card Preview -->
+<div class="px-margin-mobile mt-space-lg" id="trailerSection">
+<div class="flex justify-between items-baseline mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Official Trailer</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4K UHD • 2:34</span>
+</div>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden border border-outline-variant/40 group cursor-pointer shadow-lg bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cinematic 16:9 widescreen movie still showing an astronaut in full white spacesuit exploring the vast reflective watery surface of Miller's planet beneath towering turbulent storm clouds. Deep cyan and muted obsidian grading with crisp atmospheric reflections. Authentic high-budget space film cinematography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNDrDMJdBBNs0raozdXAcREwDSS9Q8kfgPP6sd5r6dGlGn6L3vk9YpLZQYRLEInSd5yyrYzt3vexnXz33CPOv-6Hn6M_vSGtgGx59VnKQTiaW_UA-Y-1lrO_d8UzixEvIKs7rxs_Zn2-JjGT2Ng60n0-HMvdJp3OWkWaywhscpNM8mSwS2SVZIBtqQ_qpaQDECzZWQ6gH-vcI_lkuVj4gHQZ9WykYPU8HsCMX3wcEnaETMuYiiQZZO"/>
+<!-- Dark gradient scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-black/30"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-primary-container/90 text-on-primary-fixed flex items-center justify-center shadow-[0_0_24px_rgba(0,240,255,0.6)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px] translate-x-0.5" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Video Badge -->
+<div class="absolute bottom-2.5 left-3 right-3 flex justify-between items-center text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-primary border border-outline-variant/30">Official IMAX Teaser #2</span>
+<span class="px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-sm text-on-surface font-mono">02:34</span>
+</div>
+</div>
+</div>
+<!-- Reviews & Community Discussion Preview -->
+<div class="px-margin-mobile mt-space-lg">
+<div class="flex justify-between items-baseline mb-space-xs">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Reviews</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-label-sm font-label-sm text-on-surface-variant">2.4k</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="rate_review">rate_review</span>
+          Write Review
+        </button>
+</div>
+<!-- Featured Review Card -->
+<div class="bg-surface-container/70 border border-outline-variant/30 rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="Close up avatar of an articulate film critic in stylish tortoiseshell glasses, illuminated with subtle cyan rim lighting against a muted obsidian studio background. Authentic reviewer headshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkz7HWyyXf-oCWrpNGVC4GNSFAi98aS__lJrJRAqtf1qqSGXxinj8zyvUuNVD_bDM80KOXdHlzNpNcZfLmvfzg8S67zHIbT69lN35TrybTObMazx7cTzYmmvAgTP_4G9PVWHdO_DhbMa1dqZ86mPKbPu7To-hR40HElpIOgtXSrwXj6LV65PIIdYRAHOjiA2ecnlxx70KKWynkZodliD_agi1BtHAvJ47W4Xz4pYDAEfYpiGXYLimL"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface">Julian Vance</span>
+<span class="material-symbols-outlined text-primary-container text-[14px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-primary-container font-mono">PRO CRITIC</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 days ago</span>
+</div>
+</div>
+<!-- Star Rating -->
+<div class="flex items-center gap-0.5 text-secondary-container bg-surface-container-high/60 px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[15px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">10</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/10</span>
+</div>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-1">A profound monument to modern science fiction</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-normal">
+          Zimmer's colossal organ score paired with Hoyte van Hoytema's 70mm celestial visuals transforms this theoretical physics journey into an emotional gut punch about family and survival. An unforgettable theatrical masterpiece.
+        </p>
+<!-- Upvote & Reaction Bar -->
+<div class="flex items-center gap-4 mt-3 pt-2.5 border-t border-outline-variant/20 text-label-sm font-label-sm text-on-surface-variant">
+<button class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span>
+<span>428 helpful</span>
+</button>
+<button class="flex items-center gap-1 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat_bubble">chat_bubble</span>
+<span>34 replies</span>
+</button>
+</div>
+</div>
+</div>
+<!-- "More Like This" Recommended Grid -->
+<div class="mt-space-lg mb-6">
+<div class="px-margin-mobile flex justify-between items-baseline mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">More Like This</h2>
+<span class="font-label-sm text-label-sm text-primary hover:underline cursor-pointer">Explore All</span>
+</div>
+<div class="flex gap-3 overflow-x-auto px-margin-mobile no-scrollbar py-2">
+<!-- Recommended 1: Dune Part Two -->
+<div class="w-32 shrink-0 group cursor-pointer">
+<div class="w-32 aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant/30 group-hover:border-primary-container transition-all relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Theatrical portrait movie poster of an epic sci-fi desert warrior wearing a desert stillsuit surrounded by colossal towering orange sand dunes and twin moons in twilight. Cinematic warm copper and deep obsidian tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwUsI_AWaCR0oUiAandY0i8_c-NZIATZ83C8QxmKksbDIZ4_6ar4LUBQqZx4jPAsy1MBtHF5C-V9safeTsyCQOBc5D3yQv75ucL7KYzMPBUk-gA5KPztYIRhb2-MoeDvAG600DPCwueydoFMEicsHJb23rV7gmNLYWnV6kHIoijHtFuo_Btrm7JjDNs6_3ldVG4HrpthvXaFg_rESo0GMU_M3Ode6AtTMlI4vjC27ka5NNgOcRyGjK"/>
+<div class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm text-label-sm font-label-sm text-secondary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+              8.8
+            </div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-1.5 truncate group-hover:text-primary transition-colors">Dune: Part Two</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2024 • Sci-Fi</p>
+</div>
+<!-- Recommended 2: Arrival -->
+<div class="w-32 shrink-0 group cursor-pointer">
+<div class="w-32 aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant/30 group-hover:border-primary-container transition-all relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cinematic movie poster showing an enormous vertical monolithic alien vessel hovering weightlessly over a foggy mountain valley with researchers in orange hazmat suits. Moody blue-gray atmospheric science-fiction mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8LYinI9mlGWGfJQ5fFLxaFLqWuUDfTuxLL5c-LAmw9YGYLfHBeU0-mgFvjAEat8JrajQtPeB3Y2zVA475BhKawhkgSC0-kh3PeJRve-G6IwWoVUxiBst-a05nK2E0KDbzf6Y6UJmxqSiN96eT_ksu8QHWbqQcLBNjsf6D9A09RLWlw8STXiIbxjZ4nhuk2MR29spb-dBle63ByREFA9JesXwWBpPsO7kl2ODpBg5LgpdpZ2kLnrRS"/>
+<div class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm text-label-sm font-label-sm text-secondary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+              8.0
+            </div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-1.5 truncate group-hover:text-primary transition-colors">Arrival</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2016 • Drama/Sci-Fi</p>
+</div>
+<!-- Recommended 3: 2001: A Space Odyssey -->
+<div class="w-32 shrink-0 group cursor-pointer">
+<div class="w-32 aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant/30 group-hover:border-primary-container transition-all relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Iconic cinematic sci-fi movie poster featuring an astronaut peering into a kaleidoscope of psychedelic cosmic dimensional light corridors with a red glowing AI camera eye in the corner. Deep space obsidian palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcaMq9ce7xYYwyXxSOr_u2kEN-2hG2zEb-Ens1MhlfNqSLa6nXsA-sOKjFljh4j2-wotzPbffgR0WjjzKdkTZXoZCqkXLsbRU66DRUD-oqxxa4rKIwDmvaNq3KE-h4i9OL3OaRqP7GlFMejjZi6qDjZmoYnJuTpefaiVzXc6GN5Z-w6vnoDFztYDVUSUcaVSihtBTJdWRfkAI-LGb5DzyMUyt0VtAIMV31d6zdrcKO0TNwXOTmRb-C"/>
+<div class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm text-label-sm font-label-sm text-secondary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+              8.3
+            </div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-1.5 truncate group-hover:text-primary transition-colors">2001: A Space Odyssey</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">1968 • Sci-Fi</p>
+</div>
+<!-- Recommended 4: Blade Runner 2049 -->
+<div class="w-32 shrink-0 group cursor-pointer">
+<div class="w-32 aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant/30 group-hover:border-primary-container transition-all relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cinematic movie poster with neon drenched cyberpunk city streets in torrential rain, neon magenta and turquoise holographic projections, and a solitary detective walking in long duster coat. High contrast cinematic grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT3rMn8SKrqCsbUo7viLRWvJ3yV9MR7ywwORu85vpGhbmadH9tCxkAk9eLFLY7vATZ-jg5tUF_RQocqQBNOyw72zhWRGKXR5nLj16S3FqeUf1HFSJ9jLkwfF2MdSErF8WHE5CZJ4iV9Bh_WmszktqjOMApETUJfamxma_eogDRg_wF7XYmecSaPGcKDbX1a3EzIz-cYqsuRYUk6YeO5FDzdG_DvJ2YPSfkM-5uLN9GUi6kIUMZ9v81"/>
+<div class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm text-label-sm font-label-sm text-secondary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+              8.0
+            </div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-1.5 truncate group-hover:text-primary transition-colors">Blade Runner 2049</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2017 • Neo-Noir</p>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Action Bar for Quick Actions (Mobile Contextual Utility) -->
+<!-- Prohibits borders, uses subtle background tonal shift & deep shadow -->
+<div class="fixed bottom-0 max-w-md w-full z-40 bg-surface-container/90 backdrop-blur-xl shadow-2xl px-margin-mobile py-2.5 flex items-center justify-between gap-3">
+<!-- Quick Info / Rating trigger -->
+<button class="flex items-center gap-2 px-3 py-2 rounded-full bg-surface-container-high/80 text-on-surface hover:text-secondary-container transition-all active:scale-95 border border-outline-variant/20" onclick="openRatingModal()">
+<span class="material-symbols-outlined text-[20px] text-secondary-container" data-icon="star">star</span>
+<span class="font-label-md text-label-md">Rate (8.9)</span>
+</button>
+<!-- Main Quick Action Pill -->
+<button class="flex-1 h-11 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_0_18px_rgba(0,240,255,0.3)] active:scale-95 transition-all" id="floatingWatchlistBtn" onclick="toggleWatchlist()">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark" id="floatingWatchlistIcon">bookmark</span>
+<span id="floatingWatchlistLabel">Add to Watchlist</span>
+</button>
+<!-- Quick Share Button -->
+<button aria-label="Share this film" class="w-11 h-11 rounded-full bg-surface-container-high/80 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-all border border-outline-variant/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<!-- Interactive Logic for Details Screen Micro-Interactions -->
+<script>
+    let isWatchlist = false;
+    let isWatched = false;
+    let isFavorite = false;
+    let isExpanded = false;
+
+    function toggleWatchlist() {
+      isWatchlist = !isWatchlist;
+      const mainBtn = document.getElementById('watchlistBtn');
+      const mainText = document.getElementById('watchlistText');
+      const mainIcon = document.getElementById('watchlistIcon');
+      const floatBtn = document.getElementById('floatingWatchlistBtn');
+      const floatText = document.getElementById('floatingWatchlistLabel');
+      const floatIcon = document.getElementById('floatingWatchlistIcon');
+
+      if (isWatchlist) {
+        mainText.innerText = "In Watchlist";
+        mainIcon.setAttribute('data-weight', 'fill');
+        mainIcon.style.fontVariationSettings = "'FILL' 1";
+        mainBtn.classList.replace('bg-primary-container', 'bg-surface-variant');
+        mainBtn.classList.replace('text-on-primary-fixed', 'text-primary');
+
+        floatText.innerText = "In Watchlist";
+        floatIcon.setAttribute('data-weight', 'fill');
+        floatIcon.style.fontVariationSettings = "'FILL' 1";
+        floatBtn.classList.replace('bg-primary-container', 'bg-surface-variant');
+        floatBtn.classList.replace('text-on-primary-fixed', 'text-primary');
+      } else {
+        mainText.innerText = "Add to Watchlist";
+        mainIcon.removeAttribute('data-weight');
+        mainIcon.style.fontVariationSettings = "'FILL' 0";
+        mainBtn.classList.replace('bg-surface-variant', 'bg-primary-container');
+        mainBtn.classList.replace('text-primary', 'text-on-primary-fixed');
+
+        floatText.innerText = "Add to Watchlist";
+        floatIcon.removeAttribute('data-weight');
+        floatIcon.style.fontVariationSettings = "'FILL' 0";
+        floatBtn.classList.replace('bg-surface-variant', 'bg-primary-container');
+        floatBtn.classList.replace('text-primary', 'text-on-primary-fixed');
+      }
+    }
+
+    function toggleWatched() {
+      isWatched = !isWatched;
+      const watchedBtn = document.getElementById('watchedBtn');
+      const watchedText = document.getElementById('watchedText');
+      const watchedIcon = document.getElementById('watchedIcon');
+
+      if (isWatched) {
+        watchedText.innerText = "Watched & Logged";
+        watchedBtn.classList.add('text-primary', 'border-primary-container/40', 'bg-primary-container/10');
+        watchedIcon.setAttribute('data-weight', 'fill');
+        watchedIcon.style.fontVariationSettings = "'FILL' 1";
+      } else {
+        watchedText.innerText = "Mark as Watched";
+        watchedBtn.classList.remove('text-primary', 'border-primary-container/40', 'bg-primary-container/10');
+        watchedIcon.removeAttribute('data-weight');
+        watchedIcon.style.fontVariationSettings = "'FILL' 0";
+      }
+    }
+
+    function toggleHeaderFav() {
+      isFavorite = !isFavorite;
+      const favBtn = document.getElementById('headerFavBtn');
+      const favIcon = document.getElementById('headerFavIcon');
+      if (isFavorite) {
+        favIcon.setAttribute('data-weight', 'fill');
+        favIcon.style.fontVariationSettings = "'FILL' 1";
+        favBtn.classList.add('text-error');
+      } else {
+        favIcon.removeAttribute('data-weight');
+        favIcon.style.fontVariationSettings = "'FILL' 0";
+        favBtn.classList.remove('text-error');
+      }
+    }
+
+    function toggleReadMore() {
+      isExpanded = !isExpanded;
+      const textElem = document.getElementById('synopsisText');
+      const label = document.getElementById('readMoreLabel');
+      const icon = document.getElementById('readMoreIcon');
+
+      if (isExpanded) {
+        textElem.classList.remove('line-clamp-3');
+        label.innerText = "Show Less";
+        icon.innerText = "expand_less";
+      } else {
+        textElem.classList.add('line-clamp-3');
+        label.innerText = "Read More";
+        icon.innerText = "expand_more";
+      }
+    }
+
+    function scrollToTrailer() {
+      const section = document.getElementById('trailerSection');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function openRatingModal() {
+      alert("CineVerse Community Rating: Interstellar holds 8.9/10 across 1.8M verified viewers!");
+    }
+  </script>
+</body></html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CineVerse - My Watchlist</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Outfit, Inter, Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#694900",
+            "surface-container": "#1c1f2a",
+            "primary": "#dbfcff",
+            "on-secondary-fixed": "#271900",
+            "on-secondary-fixed-variant": "#5e4100",
+            "primary-fixed-dim": "#00dbe9",
+            "surface-variant": "#313540",
+            "on-error": "#690005",
+            "outline": "#849495",
+            "on-primary-container": "#006970",
+            "secondary-fixed": "#ffdea9",
+            "surface-tint": "#00dbe9",
+            "background": "#0f131d",
+            "inverse-primary": "#006970",
+            "on-primary": "#00363a",
+            "on-tertiary-fixed": "#40000f",
+            "on-surface-variant": "#b9cacb",
+            "surface-bright": "#353944",
+            "on-error-container": "#ffdad6",
+            "surface-container-highest": "#313540",
+            "inverse-surface": "#dfe2f1",
+            "outline-variant": "#3b494b",
+            "on-primary-fixed-variant": "#004f54",
+            "on-background": "#dfe2f1",
+            "primary-container": "#00f0ff",
+            "secondary": "#ffd795",
+            "error": "#ffb4ab",
+            "on-tertiary-container": "#be003f",
+            "inverse-on-surface": "#2c303b",
+            "on-tertiary-fixed-variant": "#91002e",
+            "on-surface": "#dfe2f1",
+            "surface-container-high": "#262a35",
+            "on-tertiary": "#67001e",
+            "surface": "#0f131d",
+            "tertiary-fixed": "#ffdadc",
+            "secondary-fixed-dim": "#ffba27",
+            "error-container": "#93000a",
+            "secondary-container": "#fbb400",
+            "surface-dim": "#0f131d",
+            "tertiary": "#fff3f3",
+            "tertiary-container": "#ffcdd0",
+            "surface-container-low": "#171b26",
+            "tertiary-fixed-dim": "#ffb2b9",
+            "on-secondary": "#422c00",
+            "surface-container-lowest": "#0a0e18",
+            "primary-fixed": "#7df4ff",
+            "on-primary-fixed": "#002022"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Outfit"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Outfit"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "display-hero": ["Outfit"],
+            "body-md": ["Inter"],
+            "label-md": ["Space Grotesk"],
+            "label-sm": ["Space Grotesk"],
+            "display-hero-mobile": ["Outfit"],
+            "label-lg": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.03em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen selection:bg-primary-container selection:text-surface-container-lowest antialiased pb-28">
+<!-- TOP APP BAR -->
+<header class="bg-surface-container/70 dark:bg-surface-container/70 backdrop-blur-md text-primary dark:text-primary docked full-width top-0 sticky z-50 shadow-sm dark:shadow-black/40">
+<div class="flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-2xl active:scale-95 transition-transform duration-150" data-icon="movie">movie</span>
+<span class="text-headline-sm font-headline-sm tracking-tight text-primary dark:text-primary font-bold">CineVerse</span>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="relative p-1.5 rounded-full hover:text-primary-container dark:hover:text-primary-container transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_6px_rgba(0,240,255,0.8)]"></span>
+</button>
+<div class="w-8 h-8 rounded-full border border-primary-container/40 p-0.5 bg-surface-container-high relative active:scale-95 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close-up cyberpunk neon portrait of a film aficionado bathed in soft cyan and deep midnight blue volumetric shadows with futuristic holographic glints." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrO-ml5C1TpuqiXAZvAts5MXScKoLqQv_khUYKL8C7YFlos2xOdbVaNq53LC61lZxKMczUOfKE7Fj4p7sbSNBbUGDrQJWvf1xLrF94dZ7WFLLstaYv1H2ZDHEsKBPbFvo49kt6mw5eZ9r0VMuveASwADUjbBxw8Ep9a8G6yPh4YnJlGii2bPcyG9YuWlq5v3BlyFQujXm2N4wxspJm6jDi3Q1ziEciIp-vGJPmyWFQ6oJ6uhN2umu2"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-container border-2 border-surface-container rounded-full"></span>
+</div>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile pt-space-md max-w-md mx-auto space-y-space-md">
+<!-- HEADER TITLE & METRICS -->
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">My Watchlist</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span>38 Movies</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-primary-container font-medium">4 Unwatched</span>
+</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg bg-surface-container-high/80 text-on-surface hover:text-primary hover:border-primary-container/40 border border-outline-variant/30 transition-all duration-200 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-lg block" data-icon="filter_list">filter_list</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high/80 text-on-surface hover:text-primary hover:border-primary-container/40 border border-outline-variant/30 transition-all duration-200 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-lg block" data-icon="search">search</span>
+</button>
+</div>
+</div>
+<!-- QUICK STATS CARD -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-surface-container-high/90 via-surface-container/70 to-surface-container-lowest p-space-md border border-outline-variant/30 backdrop-blur-xl shadow-lg">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between gap-3 relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/80 border border-primary-container/30 flex items-center justify-center text-primary-container shadow-[0_0_12px_rgba(0,240,255,0.15)]">
+<span class="material-symbols-outlined text-xl" data-icon="timer">timer</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Archived Queue</span>
+<div class="font-body-md text-body-md text-on-surface font-semibold flex items-center gap-2 mt-0.5">
+<span>52 hrs Watch Time</span>
+<span class="text-outline">/</span>
+<span class="text-secondary text-xs px-2 py-0.5 rounded-full bg-secondary-container/20 border border-secondary/30">Sci-Fi Hub</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-primary-container block">89%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Target</span>
+</div>
+</div>
+<div class="w-full bg-surface-variant/40 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full w-[68%] shadow-[0_0_8px_rgba(0,240,255,0.7)]"></div>
+</div>
+</div>
+<!-- SEGMENTED STATUS TABS -->
+<div class="flex items-center p-1 bg-surface-container-lowest rounded-xl border border-outline-variant/30 gap-1">
+<button class="flex-1 py-1.5 px-3 rounded-lg font-label-md text-label-md bg-surface-container-high text-primary-container font-semibold shadow-sm border border-primary-container/20 transition-all duration-200 flex items-center justify-center gap-1.5">
+<span>All</span>
+<span class="text-xs px-1.5 py-0.2 bg-primary-container/20 text-primary-container rounded-full">38</span>
+</button>
+<button class="flex-1 py-1.5 px-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center justify-center gap-1.5">
+<span>Want to Watch</span>
+<span class="text-xs px-1.5 py-0.2 bg-surface-variant/50 text-on-surface-variant rounded-full">24</span>
+</button>
+<button class="flex-1 py-1.5 px-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center justify-center gap-1.5">
+<span>Watched</span>
+<span class="text-xs px-1.5 py-0.2 bg-surface-variant/50 text-on-surface-variant rounded-full">14</span>
+</button>
+</div>
+<!-- SORTING & VIEW CONTROLS -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sort By:</span>
+<div class="relative inline-block">
+<button class="flex items-center gap-1.5 bg-surface-container-high/60 border border-outline-variant/30 rounded-lg px-2.5 py-1 text-on-surface font-label-md text-label-md hover:border-primary-container/40 transition-colors">
+<span>Date Added</span>
+<span class="material-symbols-outlined text-sm text-primary-container" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Layout Toggle & Actions -->
+<div class="flex items-center gap-1 bg-surface-container-high/40 p-0.5 rounded-lg border border-outline-variant/30">
+<button aria-label="List View" class="p-1 rounded bg-surface-container text-primary-container">
+<span class="material-symbols-outlined text-base block" data-icon="view_list">view_list</span>
+</button>
+<button aria-label="Grid View" class="p-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-base block" data-icon="grid_view">grid_view</span>
+</button>
+</div>
+</div>
+<!-- MOVIE WATCHLIST LIST -->
+<div class="space-y-space-sm pt-1">
+<!-- Movie Card 1: Dune: Part Two -->
+<div class="group relative rounded-xl bg-surface-container/60 hover:bg-surface-container-high/80 border border-outline-variant/30 hover:border-primary-container/40 p-space-sm transition-all duration-300 shadow-md">
+<div class="flex gap-space-sm items-start">
+<!-- Poster Thumbnail (2:3) -->
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden border border-outline-variant/30 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Cinematic movie poster visual of a sweeping orange desert planet horizon with silhouetted figures standing under giant twin moons in a moody sci-fi cinematic dusk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFFDiR3qbeWzDgGbgq_J7xodfx34w-Cq5mKqoUEc7ig_GNBD-9Dcbmvh4n9P4VdtkUiA-fjPi82P8hH72_8vqTQl1MNofaopXw3IKcqMWrpluUxSI5iSiAoXanPI_KaFJSH6Q0kynQz4Wy-B5ayAHnMpJ4DkphHYb5dQ21vsZpo64suiNvldFmiS43HqM9TEbkyGRrvxrd99LUB7NHNbFwD6bCnh8nRU8bkf_IyyES5rTxRvt5jMcN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute top-1 left-1 bg-surface-container-lowest/80 backdrop-blur-md px-1 py-0.5 rounded text-[10px] font-label-sm text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-secondary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>8.8</span>
+</div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm bg-surface-container-highest/90 px-1 rounded text-primary-fixed">4K</span>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between h-28">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-base text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Dune: Part Two</h3>
+<!-- 3-Dots Menu Button -->
+<button class="text-on-surface-variant hover:text-primary p-0.5 rounded transition-colors active:scale-95" title="More options">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span>2024</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span class="truncate">Denis Villeneuve</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span>2h 46m</span>
+</p>
+<!-- User Custom Priority Tag -->
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container/30 border border-error/40 text-error font-label-sm text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+                  High Priority
+                </span>
+<span class="text-on-surface-variant text-[11px] font-body-sm italic truncate">"Must see in IMAX"</span>
+</div>
+</div>
+<!-- Status Toggle Checkbox -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/20 mt-auto">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input class="w-4 h-4 rounded bg-surface-container-lowest border-outline-variant checked:bg-primary-container checked:border-primary-container text-primary-container focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mark as watched</span>
+</label>
+<button class="text-on-surface-variant/60 hover:text-error transition-colors flex items-center gap-1 text-[11px] font-label-sm active:scale-95" title="Remove from Watchlist">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+<span>Remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Movie Card 2: Blade Runner 2049 -->
+<div class="group relative rounded-xl bg-surface-container/60 hover:bg-surface-container-high/80 border border-outline-variant/30 hover:border-primary-container/40 p-space-sm transition-all duration-300 shadow-md">
+<div class="flex gap-space-sm items-start">
+<!-- Poster Thumbnail (2:3) -->
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden border border-outline-variant/30 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Atmospheric neon bathed poster showing a trenchcoat detective standing amidst dense rain and foggy holographic advertisements in an ultramodern dystopia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3nOIdsJlSzkLaXPp4dj4eJce0w4jtQxAFH1eFDPaZ6E-BhO7FS9ByvarknIYAQcTbkIb4D0XKzIvHLKpD-vpvls14t6seDD_BmlnlXVO_3eXLvDiaSb7hK3pHLqBxmPurclPkuoa1kgjE8eryoSlactYiQzXmi2IA09XSWmaaaL01XcSx-v3HoocvIPNshH1ZXlN_sDKKBKhbqW8OqOD6oCWu5L0mpscIizNVQE2-8RfO7dpNcIp8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute top-1 left-1 bg-surface-container-lowest/80 backdrop-blur-md px-1 py-0.5 rounded text-[10px] font-label-sm text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-secondary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>8.0</span>
+</div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm bg-surface-container-highest/90 px-1 rounded text-primary-fixed">HDR</span>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between h-28">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-base text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Blade Runner 2049</h3>
+<button class="text-on-surface-variant hover:text-primary p-0.5 rounded transition-colors active:scale-95" title="More options">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span>2017</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span class="truncate">Denis Villeneuve</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span>2h 44m</span>
+</p>
+<!-- User Priority Tag -->
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/20 border border-secondary/40 text-secondary font-label-sm text-[10px] font-semibold">
+                  Medium
+                </span>
+<span class="text-on-surface-variant text-[11px] font-body-sm italic truncate">"Rewatch before 2025"</span>
+</div>
+</div>
+<!-- Status Toggle Checkbox -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/20 mt-auto">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest border-outline-variant checked:bg-primary-container checked:border-primary-container text-surface-container-lowest focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-primary-container font-medium">Watched</span>
+</label>
+<button class="text-on-surface-variant/60 hover:text-error transition-colors flex items-center gap-1 text-[11px] font-label-sm active:scale-95" title="Remove from Watchlist">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+<span>Remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Movie Card 3: Interstellar -->
+<div class="group relative rounded-xl bg-surface-container/60 hover:bg-surface-container-high/80 border border-outline-variant/30 hover:border-primary-container/40 p-space-sm transition-all duration-300 shadow-md">
+<div class="flex gap-space-sm items-start">
+<!-- Poster Thumbnail (2:3) -->
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden border border-outline-variant/30 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Deep space cosmic film poster of a lone astronaut walking over an alien frozen glacier world under swirling violet accretion disks and stellar starlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo6__Xvp4Vr-2kV4v3CttxFcH-J4H_bDDzvtCe9MGmG0bN9Dfr2Sxl31fOsFcMYxY6VpMVy9lnNdkYGk7bAe7JYBRSDv6-JfGwwCYErzPIh14tJCyNoMAROXMnlDvoW6hStKP9l9STRBUt7yeuKewBjfy_EN_7j6vD6jdMAGeer7I8xqC_r-J3WgxyTJ1CVD-s9dUiAiPoXCzi38qxc--MGG_WCNuJIRI0dcOBtxc73VI0ylm7Aob6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute top-1 left-1 bg-surface-container-lowest/80 backdrop-blur-md px-1 py-0.5 rounded text-[10px] font-label-sm text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-secondary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>8.7</span>
+</div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm bg-surface-container-highest/90 px-1 rounded text-primary-fixed">ATMOS</span>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between h-28">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-base text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Interstellar</h3>
+<button class="text-on-surface-variant hover:text-primary p-0.5 rounded transition-colors active:scale-95" title="More options">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span>2014</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span class="truncate">Christopher Nolan</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span>2h 49m</span>
+</p>
+<!-- User Priority Tag -->
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container/30 border border-error/40 text-error font-label-sm text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  High Priority
+                </span>
+<span class="text-on-surface-variant text-[11px] font-body-sm italic truncate">"Soundtrack test"</span>
+</div>
+</div>
+<!-- Status Toggle Checkbox -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/20 mt-auto">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input class="w-4 h-4 rounded bg-surface-container-lowest border-outline-variant checked:bg-primary-container checked:border-primary-container text-primary-container focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mark as watched</span>
+</label>
+<button class="text-on-surface-variant/60 hover:text-error transition-colors flex items-center gap-1 text-[11px] font-label-sm active:scale-95" title="Remove from Watchlist">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+<span>Remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Movie Card 4: Poor Things -->
+<div class="group relative rounded-xl bg-surface-container/60 hover:bg-surface-container-high/80 border border-outline-variant/30 hover:border-primary-container/40 p-space-sm transition-all duration-300 shadow-md">
+<div class="flex gap-space-sm items-start">
+<!-- Poster Thumbnail (2:3) -->
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden border border-outline-variant/30 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Surreal Victorian gothic high-fashion editorial film poster featuring vibrant baroque colors, dreamlike theatrical costuming and opulent lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlY2HSY_Kwbg-YPaHDKVAPE6V7dcXzDtodkyuLCpGMQ6NQiLK8AzT2XUCbNx_3lW0gpKmqhsFWhaQxrYLBp-GGp-5JvRNusy810NCOb4Q2TrPo85SpQ06d-0EVTSl5fNBqg-KRTJd1b0FPK3Ev456sXZhs7V9FnSPJCdjpBeHqgwZyyAlLWxpJZJ2makIEqQmapBGrBzka-MjPkLdAvdZ7dPMgF-D9RVCuJOc9_VT0FpzM43XQLvWq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute top-1 left-1 bg-surface-container-lowest/80 backdrop-blur-md px-1 py-0.5 rounded text-[10px] font-label-sm text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-secondary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>7.9</span>
+</div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm bg-surface-container-highest/90 px-1 rounded text-primary-fixed">4K</span>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between h-28">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-base text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Poor Things</h3>
+<button class="text-on-surface-variant hover:text-primary p-0.5 rounded transition-colors active:scale-95" title="More options">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span>2023</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span class="truncate">Yorgos Lanthimos</span>
+<span class="w-0.5 h-0.5 bg-outline-variant rounded-full"></span>
+<span>2h 21m</span>
+</p>
+<!-- User Priority Tag -->
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-variant/40 border border-outline-variant/30 text-on-surface-variant font-label-sm text-[10px]">
+                  Backlog
+                </span>
+<span class="text-on-surface-variant text-[11px] font-body-sm italic truncate">"Oscars marathon"</span>
+</div>
+</div>
+<!-- Status Toggle Checkbox -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/20 mt-auto">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input class="w-4 h-4 rounded bg-surface-container-lowest border-outline-variant checked:bg-primary-container checked:border-primary-container text-primary-container focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mark as watched</span>
+</label>
+<button class="text-on-surface-variant/60 hover:text-error transition-colors flex items-center gap-1 text-[11px] font-label-sm active:scale-95" title="Remove from Watchlist">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+<span>Remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ADD MOVIE QUICK CALLOUT -->
+<div class="p-4 rounded-xl border border-dashed border-outline-variant/40 text-center hover:border-primary-container/40 transition-colors">
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-container hover:underline">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>Search title to add to queue</span>
+</button>
+</div>
+</main>
+<!-- BOTTOM NAVBAR (SHARED COMPONENT) -->
+<!-- Watchlist Tab Active State strictly configured from JSON and design mandate -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-xl shadow-2xl dark:shadow-black/80">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 gap-1 hover:text-primary dark:hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined text-xl" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Home</span>
+</button>
+<!-- Discover -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 gap-1 hover:text-primary dark:hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined text-xl" data-icon="explore">explore</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Discover</span>
+</button>
+<!-- Search -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 gap-1 hover:text-primary dark:hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined text-xl" data-icon="search">search</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Search</span>
+</button>
+<!-- Watchlist (ACTIVE) -->
+<button class="flex flex-col items-center justify-center text-primary-container dark:text-primary-container drop-shadow-[0_0_8px_rgba(0,240,255,0.6)] font-bold gap-1 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-xl" data-icon="bookmark" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Watchlist</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 gap-1 hover:text-primary dark:hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Profile</span>
+</button>
+</nav>
+</body></html>
